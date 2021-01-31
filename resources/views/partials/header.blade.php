@@ -18,9 +18,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users-cog"></i> User  Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Sign in</a></li>
+            <li><a href="{{route('user.signup') }}">Sign up</a></li>
+            <li><a href="{{route('user.signin') }}">Sign in</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">logout</a></li>
+            <li><a href="{{route('user.logout') }}">Logout</a></li>
           </ul>
         </li>
       </ul>
