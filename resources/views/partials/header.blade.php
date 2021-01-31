@@ -21,7 +21,7 @@
             <li><a href="{{route('user.signup') }}">Sign up</a></li>
             <li><a href="{{route('user.signin') }}">Sign in</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">logout</a></li>
+            <li><a href="{{route('user.logout') }}">Logout</a></li>
           </ul>
         </li>
       </ul>

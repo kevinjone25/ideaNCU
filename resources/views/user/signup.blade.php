@@ -23,7 +23,7 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" class="form-control">
             </div>
-            <botton type="submit" class="btn btn-primary">Sign up</botton>
+            <button type="submit" class="btn btn-primary">Sign up</button>
             {{ csrf_field() }}
         </form>
     </div>

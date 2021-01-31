@@ -9,7 +9,8 @@ class UserController extends Controller
     public function getSignup(){
         return view('user.signup');
     }
-    public function postSignup(Request $request){
+    public function postSignup(Request $request)
+    {
         $this->validate($request, [
             'email'=>'email|required|unique:users',
             'password'=>'required|min:4'
@@ -34,7 +35,7 @@ class UserController extends Controller
             'password'=>'required|min:4'
         ]);
 
-    if(Auth::attempt(['email ' => $request ->input('email'), 'password'=>$request->input('password')])){
+    if(Auth::attempt(['email' => $request ->input('email'), 'password'=>$request->input('password')])){
         return redirect()->route('user.profile');
     }
     return redirect()->back();
@@ -42,5 +43,8 @@ class UserController extends Controller
     public function getProfile(){
         return view('user.profile');
     }
-    
+    public function getLogout(){
+        Auth::logout();
+        return redirect()->back();
+    }
 }
