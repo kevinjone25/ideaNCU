@@ -8,20 +8,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Vnekf</a>
+      <a class="navbar-brand" href="{{ route('product.index')}}">Vnekf</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right ">
-        <li><a href="#" ><i class="far fa-newspaper"></i> My post</a></li>
+        <li>
+          <a href="shopping-cart" >
+            <i class="far fa-newspaper"></i> My post
+          <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+          </a>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users-cog"></i> User  Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{route('user.signup') }}">Sign up</a></li>
+          @if(Auth::check())
+           <li><a href="{{route('user.profile') }}">Profile</a></li>
+           <li role="separator" class="divider"></li>
+           <li><a href="{{route('user.logout') }}">Logout</a></li>
+          @else
+           <li><a href="{{route('user.signup') }}">Sign up</a></li>
             <li><a href="{{route('user.signin') }}">Sign in</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="{{route('user.logout') }}">Logout</a></li>
+          @endif
           </ul>
         </li>
       </ul>

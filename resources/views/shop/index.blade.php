@@ -17,7 +17,7 @@
           <div class="pull-left price">
           {{$product->price}}
           </div>
-          <a href="#" class="btn btn-primary pull-right" role="button">Put it in cart</a>
+          <a href="{{ route('product.addToCart',['id' => $product->id]) }}" class="btn btn-primary pull-right" role="button">Put it in cart</a>
           </div>
         </div>
       </div>
