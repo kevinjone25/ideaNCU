@@ -20,10 +20,15 @@ class UserController extends Controller
             'email'=> $request->input('email'),
             'password'=>bcrypt($request->input('password'))
         ]);
+
         $user->save();
+
+   
+
         Auth::login($user);
         return redirect()->route('user.profile');
     }
+    
 
     public function getSignin(){
         return view('user.signin');

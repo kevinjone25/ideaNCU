@@ -70,7 +70,17 @@ Route::group(['prefix'=>'user'], function() {
             'uses' =>'UserController@getLogout',
             'as'=>'user.logout'
         ]);
+        Route::get('/post', [
+        'uses' =>'PostController@getPost',
+        'as'=> 'user.post'
+        ]);
+        Route::post('/post', [
+        'uses' =>'PostController@postPost',
+        'as'=> 'user.post'
+        ]);
+
     });
+    
  
 });
 
