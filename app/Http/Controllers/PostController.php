@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Post;
+use Auth;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,9 +14,11 @@ class PostController extends Controller
     {
         $post = new Post([
             'title'=> $request->input('title'),
-            'content'=>$request->input('content')
+            'content'=>$request->input('content'),
+            'user_id'=>Auth::id()
         ]);
         $post->save();
-        return redirect()->route('product.index');
+        return redirect()->route('blog.index');
     }
+ 
 }

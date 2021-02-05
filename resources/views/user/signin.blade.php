@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
-
+@section('title')
+    Sign In
+@endsection
 @section('content')
 <div classs="row">
     <div class="col-md-4 col-md-offset-4">

@@ -12,8 +12,8 @@
 */
 
 Route::get('/', [
-    'uses'=>'ProductController@getIndex',
-    'as'=>'product.index'
+    'uses'=>'BlogController@getIndex',
+    'as'=>'blog.index'
 ]);
 
 Route::get('/add-to-cart/{id}', [

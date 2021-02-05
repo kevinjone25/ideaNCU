@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Blog
+    Publish your Post
 @endsection
 @section('content')
     <div>
@@ -9,7 +9,7 @@
     </div>
     <br>
     <br>
-    <form action="{{ route('post') }}" method="post" id="checkout-form">
+    <form action="{{ route('user.post') }}" method="post" id="checkout-form">
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" class="form-control">
